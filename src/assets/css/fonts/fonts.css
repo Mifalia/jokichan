@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'CabinetGrotesk';
+  src: url('./CabinetGrotesk-Variable.ttf');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./Satoshi-Variable.ttf');
+}
+
+@font-face {
+  font-family: 'JetBrains-Mono';
+  src: url('./JetBrainsMono-VariableFont_wght.ttf');
+}

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('./colors/colors.css');
+  @import url('./fonts/fonts.css');
+
+  html {
+    @apply bg-fill text-content;
+  }
+
+  p {
+    @apply text-base font-serif;
+  }
+}
+
+@layer components {
+  /* navigation item */
+  .navigation-group {
+    @apply p-1 bg-fill-2 flex gap-1 rounded-lg w-fit font-sans;
+  }
+
+  .navigation-item {
+    @apply h-10 flex items-center justify-center uppercase  px-4 rounded font-bold text-sm bg-transparent text-content-2;
+  }
+
+  .navigation-item.current {
+    @apply text-accent bg-fill;
+  }
+
+  /* */
+}
+
+@layer utilities {
+  .app-container {
+    @apply container md:max-w-5xl mx-auto px-4;
+  }
+}

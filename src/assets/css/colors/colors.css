@@ -1,0 +1,21 @@
+:root {
+  --primary: #2ad587;
+  --on-primary-container: #1c8756;
+  --primary-container: #eafbf3;
+  --content: #2c2c2c;
+  --neutral: #969696;
+  --surface: #fafafa;
+  --fill: #fdfdfd;
+  --border: #efefef;
+}
+
+.dark {
+  --primary: #6eddb3;
+  --on-primary-container: #b5e6db;
+  --primary-container: #243632;
+  --content: #fdfdfd;
+  --neutral: #a5a5a5;
+  --surface: #3e3e3e;
+  --fill: #161b23;
+  --border: #30363d;
+}
