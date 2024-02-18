@@ -12,6 +12,7 @@ export default {
         surface: 'var(--surface)',
         fill: 'var(--fill)',
         border: 'var(--border)',
+        'global-layout-fill': 'var(--global-layout-fill)',
       },
     },
   },

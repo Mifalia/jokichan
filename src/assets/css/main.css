@@ -1,13 +1,13 @@
+@import url('./colors/colors.css');
+@import url('./fonts/fonts.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  @import url('./colors/colors.css');
-  @import url('./fonts/fonts.css');
-
   html {
-    @apply bg-fill text-content;
+    @apply bg-global-layout-fill text-content;
   }
 
   p {
@@ -34,6 +34,6 @@
 
 @layer utilities {
   .app-container {
-    @apply container md:max-w-5xl mx-auto px-4;
+    @apply container sm:max-w-3xl mx-auto px-4;
   }
 }

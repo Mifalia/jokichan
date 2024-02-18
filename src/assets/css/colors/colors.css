@@ -7,6 +7,7 @@
   --surface: #fafafa;
   --fill: #fdfdfd;
   --border: #efefef;
+  --global-layout-fill: #e7f9f3;
 }
 
 .dark {
@@ -18,4 +19,5 @@
   --surface: #3e3e3e;
   --fill: #161b23;
   --border: #30363d;
+  --global-layout-fill: #161923;
 }
