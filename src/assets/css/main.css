@@ -37,6 +37,15 @@
     @apply flex flex-row flex-nowrap items-center gap-2 pl-4 pr-3;
   }
 
+  /* tags */
+  .tag {
+    @apply rounded-full border font-sans text-sm px-3 py-1.5 border-neutral text-neutral;
+  }
+
+  .tag.active {
+    @apply border-primary text-primary;
+  }
+
   /* */
 }
 
