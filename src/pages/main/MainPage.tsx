@@ -1,8 +1,9 @@
-import logoLight from 'src/assets/img/Logo-light.png';
+import Footer from 'src/components/Footer';
+import Header from 'src/components/Header';
+
 import { MdLoop } from 'react-icons/md';
 import { MdOutlineContentCopy } from 'react-icons/md';
 import { MdFilterList } from 'react-icons/md';
-import { IoSunnyOutline, IoLogoGithub } from 'react-icons/io5';
 
 function MainPage() {
   return (
@@ -10,11 +11,7 @@ function MainPage() {
       {/* main frame */}
       <div id='main' className='bg-fill rounded-lg flex flex-col'>
         {/* header */}
-        <header className='flex justify-center items-center border-b border-b-border h-16'>
-          <div className='w-fit'>
-            <img src={logoLight} alt='application logo' />
-          </div>
-        </header>
+        <Header />
         {/* body */}
         <div className='p-4'>
           <p className='bg-surface font-mono rounded p-4'>Why couldn't the skeleton go to the Christmas party? Because he had no body to go with!</p>
@@ -44,17 +41,7 @@ function MainPage() {
           </div>
         </div>
         {/* footer */}
-        <footer className='h-11 px-4 flex justify-between items-center border-t border-t-border'>
-          <span className='font-thin font-sans text-neutral'>© Copyright 2024 - Mifalia Nathanaël</span>
-          <div className='flex gap-1'>
-            <button className='rounded h-10 w-10 flex justify-center items-center text-primary'>
-              <IoSunnyOutline size={20} />
-            </button>
-            <button className='rounded h-10 w-10 flex justify-center items-center text-neutral'>
-              <IoLogoGithub size={20} />
-            </button>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
