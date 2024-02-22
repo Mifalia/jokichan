@@ -4,8 +4,17 @@ import Header from 'src/components/Header';
 import { MdLoop } from 'react-icons/md';
 import { MdOutlineContentCopy } from 'react-icons/md';
 import { MdFilterList } from 'react-icons/md';
+import jokeStore from 'src/store/JokeStore';
+import { observer } from 'mobx-react';
 
 function MainPage() {
+  const handleGenerateAction = () => {
+    jokeStore.generateJoke();
+  };
+
+  /*----
+    RENDERING 
+  ----*/
   return (
     <div id='layout' className='app-container h-screen flex flex-col justify-center text-content'>
       {/* main frame */}
@@ -14,13 +23,25 @@ function MainPage() {
         <Header />
         {/* body */}
         <div className='p-4'>
-          <p className='bg-surface font-mono rounded p-4'>Why couldn't the skeleton go to the Christmas party? Because he had no body to go with!</p>
+          <p className='bg-surface font-mono rounded p-4 min-h-20'>
+            {jokeStore.isLoading ? (
+              <br />
+            ) : jokeStore.joke.type === 'single' ? (
+              jokeStore.joke.joke
+            ) : (
+              <>
+                {jokeStore.joke.setup}
+                <br />
+                {jokeStore.joke.delivery}
+              </>
+            )}
+          </p>
           <div className='mt-4 p-0 flex flex-row justify-center items-center gap-3'>
             <button className='button button-icon-start button-default'>
               <MdOutlineContentCopy size={16} />
               copy
             </button>
-            <button className='button button-icon-start button-primary'>
+            <button className='button button-icon-start button-primary' onClick={handleGenerateAction}>
               <MdLoop size={16} />
               another one
             </button>
@@ -47,4 +68,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default observer(MainPage);

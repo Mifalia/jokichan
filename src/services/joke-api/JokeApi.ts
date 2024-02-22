@@ -1,7 +1,7 @@
 import { JokeApiRequestOptions, JokeApiResponse } from './types';
 
 class JokeApi {
-  private baseUrl = 'https://v2.jokeapi.dev/joke/';
+  private baseUrl = 'https://v2.jokeapi.dev/';
   private defaultOptions: JokeApiRequestOptions = {
     categories: ['Any'],
     type: 'twopart',
@@ -22,7 +22,7 @@ class JokeApi {
     };
 
     const categoriesToString = req_options.categories?.join(',');
-    const endpoint = `${this.baseUrl}${categoriesToString}?type=${req_options.type}&lang=${req_options.lang}`;
+    const endpoint = `${this.baseUrl}joke/${categoriesToString}?type=${req_options.type}&lang=${req_options.lang}`;
     console.log(endpoint);
 
     const response = await fetch(endpoint);
