@@ -33,6 +33,33 @@ class JokeStore {
     });
     this.categories = categories;
   }
+
+  toggleCategoryActivity(categoryName: string) {
+    if (categoryName === 'Any') {
+      for (let i in this.categories) {
+        this.categories[i].active = this.categories[i].name === 'Any' ? true : false;
+      }
+      return;
+    }
+
+    for (let i in this.categories) {
+      if (this.categories[i].name === categoryName) {
+        console.log('before');
+        console.log(this.categories[i].active);
+        this.categories[i].active = !this.categories[i].active;
+        console.log('after');
+        console.log(this.categories[i].active);
+        break;
+      }
+    }
+    const flt = this.categories.filter((category) => category.name !== 'Any' && category.active === true);
+
+    for (let i in this.categories) {
+      if (this.categories[i].name === 'Any') {
+        this.categories[i].active = flt.length === 0 ? true : false;
+      }
+    }
+  }
 }
 
 const jokeStore = new JokeStore();

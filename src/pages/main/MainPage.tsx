@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 
@@ -8,8 +10,12 @@ import jokeStore from 'src/store/JokeStore';
 import { observer } from 'mobx-react';
 
 function MainPage() {
-  const handleGenerateAction = () => {
+  const handleGenerateClick = () => {
     jokeStore.generateJoke();
+  };
+
+  const handleTagClick = (categoryName: string) => {
+    jokeStore.toggleCategoryActivity(categoryName);
   };
 
   /*----
@@ -41,23 +47,25 @@ function MainPage() {
               <MdOutlineContentCopy size={16} />
               copy
             </button>
-            <button className='button button-icon-start button-primary' onClick={handleGenerateAction}>
+            <button className='button button-icon-start button-primary' onClick={handleGenerateClick}>
               <MdLoop size={16} />
               another one
             </button>
           </div>
-          <div className='mt-8 flex justify-start items-center gap-1'>
-            <div className='button button-icon-start cursor-auto'>
+          <div className='mt-8 flex justify-start items-start gap-2'>
+            <div className='flex flex-start items-center gap-1.5 font-extralight p-0 w-fit capitalize shrink-0 grow-0'>
               <MdFilterList size={16} />
               customize filters
             </div>
             <div className='flex flex-start flex-wrap gap-2'>
-              <div>
-                <input type='checkbox' id='programming' name='programming' value='programming' className='invisible' />
-                <label htmlFor='programming' className='tag'>
-                  Programming
-                </label>
-              </div>
+              {jokeStore.categories?.map((category, index) => (
+                <div key={index} className='w-fit h-fit'>
+                  <input type='checkbox' id={category.name + 'Checkbox'} name={category.name} value={category.name} className='hidden' />
+                  <label htmlFor={category.name + 'Checkbox'} className={`cursor-pointer tag ${category.active && 'active'}`} onClick={() => handleTagClick(category?.name)}>
+                    {category.name}
+                  </label>
+                </div>
+              ))}
             </div>
           </div>
         </div>
