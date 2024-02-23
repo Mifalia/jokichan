@@ -59,7 +59,7 @@ function MainPage() {
               {jokeStore.categories?.map((category, index) => (
                 <div key={index} className='w-fit h-fit'>
                   <input type='checkbox' id={category.name + 'Checkbox'} name={category.name} value={category.name} className='hidden' />
-                  <label htmlFor={category.name + 'Checkbox'} className={`cursor-pointer tag ${category.active && 'active'}`} onClick={() => handleTagClick(category?.name)}>
+                  <label htmlFor={category.name + 'Checkbox'} className={`cursor-pointer tag ${category.active ? 'active' : ''}`} onClick={() => handleTagClick(category?.name)}>
                     {category.name}
                   </label>
                 </div>
