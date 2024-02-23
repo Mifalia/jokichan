@@ -47,11 +47,7 @@ class JokeStore {
 
     for (let i in this.categories) {
       if (this.categories[i].name === categoryName) {
-        console.log('before');
-        console.log(this.categories[i].active);
         this.categories[i].active = !this.categories[i].active;
-        console.log('after');
-        console.log(this.categories[i].active);
         break;
       }
     }
