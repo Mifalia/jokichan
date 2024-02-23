@@ -24,14 +24,15 @@
   }
 
   .button:hover::after {
-    @apply opacity-100;
+    @apply opacity-100 scale-x-100;
   }
 
   .button::after {
-    @apply absolute top-0 right-0 bottom-0 left-0 opacity-0 rounded bg-darken;
+    @apply absolute top-0 right-0 bottom-0 opacity-0 left-0 bg-darken rounded;
     content: '';
     z-index: 2;
-    transition: opacity 250ms;
+    transform: scaleX(0.25);
+    transition: opacity 250ms, transform 250ms;
   }
 
   .button-default {
@@ -52,11 +53,28 @@
 
   /* tags */
   .tag {
-    @apply rounded-full border font-sans text-sm px-3 py-1.5 border-neutral text-neutral;
+    @apply rounded-full border font-sans text-sm px-3 py-1.5 border-neutral text-neutral relative;
+    z-index: 1;
+  }
+
+  .tag:hover::after {
+    @apply opacity-100 scale-x-100;
+  }
+
+  .tag::after {
+    @apply absolute top-0 right-0 bottom-0 opacity-0 left-0 bg-primary-container rounded-full;
+    content: '';
+    z-index: -1;
+    transform: scaleX(0.25);
+    transition: opacity 250ms, transform 250ms;
   }
 
   .tag.active {
     @apply border-primary text-primary;
+  }
+
+  .tag.active::after {
+    @apply opacity-0;
   }
 
   /* */
