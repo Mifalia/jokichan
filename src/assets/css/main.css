@@ -7,7 +7,7 @@
 
 @layer base {
   html {
-    @apply bg-global-layout-fill text-content;
+    @apply md:bg-global-layout-fill text-content;
   }
 
   p {
@@ -51,6 +51,6 @@
 
 @layer utilities {
   .app-container {
-    @apply container sm:max-w-3xl mx-auto px-4;
+    @apply container md:max-w-3xl mx-auto md:px-4;
   }
 }

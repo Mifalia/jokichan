@@ -9,8 +9,8 @@ function Footer() {
   };
 
   return (
-    <footer className='h-11 px-4 flex justify-between items-center border-t border-t-border'>
-      <span className='font-thin font-sans text-neutral'>© Copyright 2024 - Mifalia Nathanaël</span>
+    <footer className={'h-12 md:h-11 px-4 flex justify-between items-center border-t border-t-border mt-auto'}>
+      <span className='font-thin font-sans text-neutral text-xs md:text-sm'>© Copyright 2024 - Mifalia Nathanaël</span>
       <div className='flex gap-1'>
         <button className='rounded h-10 w-10 flex justify-center items-center text-primary' onClick={handleThemeToggle}>
           {themeStore.theme === 'light' ? <IoSunnyOutline size={20} /> : <RxMoon size={20} />}

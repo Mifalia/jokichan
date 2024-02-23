@@ -15,6 +15,9 @@ export default {
         'global-layout-fill': 'var(--global-layout-fill)',
       },
     },
+    screens: {
+      md: '768px',
+    },
   },
   plugins: [],
 };

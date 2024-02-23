@@ -22,7 +22,7 @@ function MainPage() {
   return (
     <div id='layout' className='app-container h-screen flex flex-col justify-center text-content'>
       {/* main frame */}
-      <div id='main' className='bg-fill rounded-lg flex flex-col'>
+      <div id='main' className='h-full md:h-fit bg-fill rounded-none md:rounded-lg flex flex-col'>
         {/* header */}
         <Header />
         {/* body */}
@@ -41,21 +41,21 @@ function MainPage() {
             )}
           </p>
           <div className='mt-4 p-0 flex flex-row justify-center items-center gap-3'>
-            <button className='button button-icon-start button-default'>
+            <button className='button button-icon-start button-default shrink-0 justify-center grow md:grow-0'>
               <MdOutlineContentCopy size={16} />
               copy
             </button>
-            <button className='button button-icon-start button-primary' onClick={handleGenerateClick}>
+            <button className='button button-icon-start button-primary shrink-0 justify-center grow md:grow-0' onClick={handleGenerateClick}>
               <MdLoop size={16} />
               another one
             </button>
           </div>
-          <div className='mt-8 flex justify-start items-start gap-2'>
+          <div className='mt-12 md:mt-8 flex flex-col md:flex-row justify-start items-start gap-4'>
             <div className='flex flex-start items-center gap-1.5 font-extralight p-0 w-fit capitalize shrink-0 grow-0'>
               <MdFilterList size={16} />
               customize filters
             </div>
-            <div className='flex flex-start flex-wrap gap-2'>
+            <div className='flex flex-start flex-wrap gap-x-2 gap-y-4'>
               {jokeStore.categories?.map((category, index) => (
                 <div key={index} className='w-fit h-fit'>
                   <input type='checkbox' id={category.name + 'Checkbox'} name={category.name} value={category.name} className='hidden' />
