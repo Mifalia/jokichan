@@ -7,10 +7,19 @@ import { MdFilterList } from 'react-icons/md';
 import jokeStore from 'src/store/JokeStore';
 import { observer } from 'mobx-react';
 import toast, { Toaster } from 'react-hot-toast';
+import Typist from 'react-typist-component';
+import { useState } from 'react';
 
 function MainPage() {
+  const [showCursor, setShowCursor] = useState(true);
+
   const handleGenerateClick = () => {
     jokeStore.generateJoke();
+    setShowCursor(true);
+  };
+
+  const handleGenerateDone = () => {
+    setShowCursor(false);
   };
 
   const handleCopy: React.MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -54,14 +63,19 @@ function MainPage() {
             <p className='bg-surface font-mono rounded p-4 min-h-20'>
               {jokeStore.isLoading ? (
                 <br />
-              ) : jokeStore.joke.type === 'single' ? (
-                jokeStore.joke.joke
               ) : (
-                <>
-                  {jokeStore.joke.setup}
-                  <br />
-                  {jokeStore.joke.delivery}
-                </>
+                <Typist typingDelay={35} cursor={<span className={`text-primary ${!showCursor && 'hidden'}`}>|</span>} onTypingDone={handleGenerateDone}>
+                  {jokeStore.joke.type === 'single' ? (
+                    jokeStore.joke.joke
+                  ) : (
+                    <>
+                      {jokeStore.joke.setup}
+                      <Typist.Delay ms={1500}></Typist.Delay>
+                      <br />
+                      {jokeStore.joke.delivery}
+                    </>
+                  )}
+                </Typist>
               )}
             </p>
             <div className='mt-4 p-0 flex flex-row justify-center items-center gap-3'>
