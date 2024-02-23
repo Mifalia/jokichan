@@ -8,6 +8,7 @@
   --fill: #fdfdfd;
   --border: #efefef;
   --global-layout-fill: #e7f9f3;
+  --darken: #2c2c2c0f;
 }
 
 .dark {
@@ -20,4 +21,5 @@
   --fill: #2e2e2e;
   --border: #30363d;
   --global-layout-fill: #161923;
+  --darken: #fdfdfd0f;
 }
