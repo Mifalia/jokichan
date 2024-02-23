@@ -20,7 +20,10 @@ class JokeStore {
 
   async generateJoke() {
     this.isLoading = true;
-    const joke = await JokeApi.fetchJoke();
+    // managing categories
+    const categories = this.categories.filter((category) => category.active === true).map((category) => category.name);
+    // send request
+    const joke = await JokeApi.fetchJoke({ categories: categories });
     if (!joke.error) {
       this.joke = joke;
     }
