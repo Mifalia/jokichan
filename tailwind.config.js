@@ -15,6 +15,11 @@ export default {
         darken: 'var(--darken)',
         'global-layout-fill': 'var(--global-layout-fill)',
       },
+      fontFamily: {
+        sans: 'Satoshi',
+        serif: 'CabinetGrotesk',
+        mono: 'JetBrains-Mono',
+      },
     },
     screens: {
       md: '768px',
