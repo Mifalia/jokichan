@@ -7,7 +7,11 @@ function Header() {
   return (
     <header className='flex justify-center items-center border-b border-b-border h-16'>
       <div className='w-fit'>
-        <img src={themeStore.theme === 'light' ? logoLight : logoDark} alt='application logo' />
+        <img
+          src={themeStore.theme === 'light' ? logoLight : logoDark}
+          alt='application logo'
+          className='max-h-7'
+        />
       </div>
     </header>
   );
