@@ -1,6 +1,6 @@
-The app fetches its data from [jokeapi](https://jokeapi.dev/).
+This app is fetching data from [jokeapi](https://jokeapi.dev/).
 
-This project is deployed on [jokichan.vercel.app](https://jokichan.vercel.app/)
+The project is deployed on [jokichan.vercel.app](https://jokichan.vercel.app/)
 
 # How to set up the project : 
 
